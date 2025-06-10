@@ -27,15 +27,16 @@ stopwords = load_stopwords()
 
 # Giao diện người dùng
 st.title("📄 Vietnamese News Classification")
-st.write("Paste a piece of Vietnamese news, and the app will classify its category.")
-
+st.write("Hãy dán nội dung bài báo vào ô bên dưới. Hệ thống sẽ phân loại thể loại của bài viết.")
+st.write("© Created by Dinh Ngoc Khanh Huyen, Truong Ngoc Mai, Tran Khanh Quynh")
+st.image("images/download.jfif")
 # Text input
-input_text = st.text_area("📝 Paste the news content here:")
+input_text = st.text_area("📝 Nhập nội dung bài báo tại đây")
 
 # Khi người dùng nhấn nút "Phân loại"
 if st.button("Phân loại"):
     if not input_text.strip():
-        st.warning("Vui lòng nhập nội dung bài báo.")
+        st.warning("⚠️ Vui lòng nhập nội dung bài báo.")
     else:
         # Tiền xử lý và vector hóa văn bản
         processed_text = preprocess(input_text, stopwords)
